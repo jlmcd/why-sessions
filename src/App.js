@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import './App.css'
+import axios from 'axios'
+import {click} from './utils/clicks'
+
 
 function App() {
+  const [clicks, updateClicks] = useState(0)
+  axios.get('/api/clicks').then(res => updateClicks(res.data))
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>{clicks}</h1>
+      <button onClick={() => click(updateClicks)}>Click Me!</button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
