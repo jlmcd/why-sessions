@@ -11,7 +11,10 @@ app.use(express.json())
 app.use(session({
   resave: false,
   saveUninitialized: false,
-  secret: SESSION_SECRET
+  secret: SESSION_SECRET,
+  cookie: {
+    maxAge: 60 * 60 * 60 * 24 * 7
+  }
 }))
 
 // ENDPOINTS
