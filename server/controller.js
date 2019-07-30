@@ -8,7 +8,6 @@ module.exports = {
     res.status(200).send(String(++clicks))
   },
   getPoints: (req, res) => {
-    console.log('hit')
     res.status(200).send(String(req.session.points))
   },
   login: (req, res) => {
