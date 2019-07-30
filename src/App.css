@@ -50,6 +50,7 @@ table {
 body {
   background: #f1f1f1;
   min-height: 100vh;
+  touch-action: manipulation;
 }
 .App {
   text-align: center;
@@ -69,6 +70,7 @@ button {
 }
 button:focus {
   outline: none;
+  touch-action: manipulation;
 }
 h1 {
   color: #5d5d5d;
