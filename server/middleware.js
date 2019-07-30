@@ -3,8 +3,8 @@ module.exports = {
     console.log('middleware hit')
     next()
   },
-  authorization: (req, res, next) => {
-    if (req.body.username === 'Michael Scarn') {
+  authenticate: (req, res, next) => {
+    if (req.session.username === 'Michael Scarn') {
       next()
     } else {
       res.status(401).send('Not authorized!')
