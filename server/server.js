@@ -16,6 +16,8 @@ app.use(session({
     maxAge: 60 * 60 * 60 * 24 * 7
   }
 }))
+app.use(express.static(`${__dirname}/../build`))
+
 
 // ENDPOINTS
 app.get('/api/clicks', ctrl.getClicks)
